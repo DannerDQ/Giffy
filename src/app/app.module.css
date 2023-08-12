@@ -1,0 +1,17 @@
+.app_container {
+  min-width: var(--min-width);
+  max-width: 80vw;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: grid;
+  grid-template-rows: minmax(90px, auto) 1fr;
+  gap: 1em;
+}
+
+.trending_gifs_wrapper {
+  min-width: var(--min-width);
+}

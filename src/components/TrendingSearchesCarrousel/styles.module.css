@@ -1,0 +1,25 @@
+.trending_searches_container {
+  position: relative;
+  max-width: 80vw;
+  overflow: hidden;
+}
+
+.trending_searches_container > span {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  height: 40px;
+  overflow: hidden;
+  width: 0;
+  top: 0;
+}
+
+.trending_searches_container > span:first-child {
+  left: 0;
+  background-image: linear-gradient(to right, #000c, #0000);
+}
+
+.trending_searches_container > span:last-child {
+  right: 0;
+  background-image: linear-gradient(to left, #000c, #0000);
+}

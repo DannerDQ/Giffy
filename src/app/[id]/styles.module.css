@@ -1,0 +1,33 @@
+.download {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.wrapper {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.view_gif {
+  width: var(--min-width);
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+}
+
+.related {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

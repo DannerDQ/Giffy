@@ -1,0 +1,9 @@
+.search_results {
+  position: relative;
+  width: var(--min-width);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@types": [
+        "./src/types.d.ts"
+      ],
+      "@constants": [
+        "./src/constants.ts"
+      ],
+      "@icons": [
+        "./src/icons/index.tsx"
+      ],
+      "@contexts": [
+        "./src/contexts.tsx"
+      ],
+      "@component/*": [
+        "./src/components/*"
+      ],
+      "@hook/*": [
+        "./src/lib/hooks/*"
+      ],
+      "@util/*": [
+        "./src/lib/utils/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/components/TrendingSearchesCarrousel"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

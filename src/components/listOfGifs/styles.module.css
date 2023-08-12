@@ -1,0 +1,26 @@
+.list_of_gifs {
+  list-style: none;
+  min-width: var(--min-width);
+  width: 80vh;
+  min-height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-bottom: 3em;
+}
+
+.list_of_gifs > li {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.list_of_gifs > div {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+}
