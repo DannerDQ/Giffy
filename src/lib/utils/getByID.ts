@@ -14,10 +14,25 @@ export default function getByID(id: string): Promise<gif> {
 
 			const { url, height, width, webp } = original
 
-			return { id, title, url, height: Number(height), width: Number(width), srcSet: webp }
+			return {
+				id,
+				title,
+				url,
+				height: Number(height),
+				width: Number(width),
+				srcSet: webp ?? "",
+				original: { url: "", width: 0, height: 0 },
+			}
 		})
-		.catch((err) => {
-			console.log({ err })
-			return { id, title: "", url: "", height: 0, width: 0, srcSet: "" }
+		.catch(() => {
+			return {
+				id,
+				title: "",
+				url: "",
+				height: 0,
+				width: 0,
+				srcSet: "",
+				original: { url: "", width: 0, height: 0 },
+			}
 		})
 }

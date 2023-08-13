@@ -10,13 +10,13 @@ import withoutRepeat from "@util/withoutRepeat"
 import { useContext, useEffect } from "react"
 
 export default function TrendingGifs() {
-	const { gifs, offset, setGifs, setOffset } = useContext(gifsContext)
+	const { gifs = [], offset = 0, setGifs, setOffset } = useContext(gifsContext)
 
 	useEffect(() => {
 		const url = `${TRENDING_GIFS}&&offset=${offset * 35}`
 
 		getGifs(url).then((trendingGifs) => {
-			setGifs(withoutRepeat(...gifs, ...trendingGifs))
+			setGifs?.(withoutRepeat(...gifs, ...trendingGifs))
 		})
 	}, [offset])
 

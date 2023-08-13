@@ -7,7 +7,7 @@ type baseInfo = {
 	url: string
 	width: number
 	height: number
-	webp: string
+	webp?: string
 }
 
 export type bruteGif = baseGif & {
@@ -18,7 +18,7 @@ export type bruteGif = baseGif & {
 }
 
 export type gif = baseInfo &
-	baseGif & {
-		srcSet: string
-		original: baseInfo
-	}
+		baseGif & {
+			srcSet: string
+			original: baseInfo
+		}

@@ -1,8 +1,7 @@
 import styles from "./app.module.css"
 import TrendingSearchesCarrousel from "@component/TrendingSearchesCarrousel"
-import Observer from "@component/observer"
 import TrendingGifs from "@component/trendingGifs"
-import { GifsContext, TrendingSearchesContext } from "@contexts"
+import { TrendingSearchesContext } from "@contexts"
 import { HotIcon, TrendingIcon } from "@icons"
 
 export default async function App() {

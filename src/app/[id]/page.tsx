@@ -11,7 +11,15 @@ import { useEffect, useState } from "react"
 
 export default function ({ params: { id } }: { params: { id: string } }) {
 	const [loading, setLoading] = useState(true)
-	const [gif, setGif] = useState({})
+	const [gif, setGif] = useState({
+		url: "",
+		id: "",
+		title: "",
+		srcSet: "",
+		height: 0,
+		width: 0,
+		original: { url: "", width: 0, height: 0 },
+	})
 
 	useEffect(() => {
 		const storageGifs = localStorage.getItem("gifs")
@@ -20,14 +28,21 @@ export default function ({ params: { id } }: { params: { id: string } }) {
 			const gifs = JSON.parse(storageGifs)
 			const storageGif: gifType | undefined = gifs.find((gif: gifType) => gif.id === id)
 
-			console.log(storageGif)
 			if (storageGif) {
 				const {
 					id,
 					title,
 					original: { url, webp: srcSet, height, width },
 				} = storageGif
-				setGif({ id, title, srcSet, url, height, width })
+				setGif({
+					id,
+					title,
+					srcSet: srcSet ?? "",
+					url,
+					height,
+					width,
+					original: { url: "", width: 0, height: 0 },
+				})
 				setLoading(false)
 				return
 			}

@@ -2,15 +2,14 @@
 
 import styles from "./styles.module.css"
 import { SearchIcon } from "@icons"
-import { FormEvent, useRef } from "react"
+import { FormEvent, useState } from "react"
 
 export default function SearchBar() {
-	const input = useRef(null)
+	const [query, setQuery] = useState("")
 
 	function handleSubmit(event: FormEvent) {
 		event.preventDefault()
 
-		const query = input.current.value
 		location.href = `/search/${query}`
 	}
 
@@ -18,12 +17,16 @@ export default function SearchBar() {
 		<form className={styles.search_container} autoComplete="on" onSubmit={handleSubmit}>
 			<label className={styles.search_label}>
 				<input
-					ref={input}
 					type="search"
 					className={styles.search_input}
 					placeholder="Type something here..."
 					required
 					spellCheck
+					onInput={(e) => {
+						const { value } = e.currentTarget
+
+						setQuery(value)
+					}}
 				/>
 				<button className={styles.search_button} type="submit">
 					<SearchIcon />

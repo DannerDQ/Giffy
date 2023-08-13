@@ -53,7 +53,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/TrendingSearchesCarrousel"
-  ],
+,
+"src/lib/utils/masonry.js"
+],
   "exclude": [
     "node_modules"
   ]

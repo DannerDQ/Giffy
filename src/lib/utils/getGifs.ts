@@ -17,7 +17,7 @@ export default function getGifs(url: string) {
 					title,
 					id,
 					url,
-					srcSet,
+					srcSet: srcSet ?? "",
 					width: Number(width),
 					height: Number(height),
 					original: {

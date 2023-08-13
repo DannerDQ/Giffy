@@ -13,8 +13,8 @@ export default function watch() {
 			},
 			{ rootMargin: "200px" }
 		)
-
-		observer.observe(fromRef.current)
+		
+		if (fromRef.current) observer.observe(fromRef.current)
 
 		return () => observer.disconnect()
 	})

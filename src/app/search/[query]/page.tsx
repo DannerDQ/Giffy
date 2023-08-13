@@ -12,7 +12,7 @@ import withoutRepeat from "@util/withoutRepeat"
 import { useContext, useEffect, useState } from "react"
 
 export default function SearchResults({ params: { query } }: { params: { query: string } }) {
-	const { gifs, setGifs, offset, setOffset } = useContext(gifsContext)
+	const { gifs = [], setGifs, offset = 0, setOffset } = useContext(gifsContext)
 	const [endPagination, setEndPagination] = useState(false)
 
 	useEffect(() => {
@@ -24,7 +24,7 @@ export default function SearchResults({ params: { query } }: { params: { query: 
 				return
 			}
 
-			setGifs(withoutRepeat(...gifs, ...results))
+			setGifs?.(withoutRepeat(...gifs, ...results))
 		})
 	}, [offset, query])
 
