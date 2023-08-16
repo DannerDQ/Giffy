@@ -9,7 +9,6 @@ import { useEffect, useRef } from "react"
 export default function ListOfGifs({ gifs }: { gifs: gif[] }) {
 	const listOfGifs = useRef(null)
 	const { default: Masonry } = awaitMasonry(import("masonry-layout"))
-	let masonry = null
 
 	useEffect(() => {
 		if (listOfGifs.current && Masonry) {
@@ -18,6 +17,7 @@ export default function ListOfGifs({ gifs }: { gifs: gif[] }) {
 				itemSelector: ".selector",
 				fitWidth: true,
 				gutter: 20,
+				horizontalOrder: true,
 			})
 		}
 	}, [Masonry, gifs])

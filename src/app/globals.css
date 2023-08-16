@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Bungee Shade";
-  src: url("./fonts/BungeeShade.ttf") format("ttf");
-}
-
 :root {
   --min-width: 1080px;
   --min-height: 500px;

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Bungee Shade";
+  src: url("/BungeeShade.ttf");
+}
+
 .glitch_container {
   position: relative;
   text-align: center;
@@ -5,7 +10,7 @@
 
 .glitch,
 .glitch * {
-  font-family: "Bungee Shade";
+  font-family: "Bungee Shade", var(--font-family);
 }
 
 .glitch {
