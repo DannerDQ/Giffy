@@ -29,7 +29,6 @@ export default function getGifs(url: string) {
 			})
 		})
 		.catch(() => {
-			const gifs: gif[] = []
-			return gifs
+			return new Array<gif>()
 		})
 }

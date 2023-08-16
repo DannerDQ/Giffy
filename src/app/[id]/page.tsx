@@ -34,6 +34,7 @@ export default function ({ params: { id } }: { params: { id: string } }) {
 					title,
 					original: { url, webp: srcSet, height, width },
 				} = storageGif
+
 				setGif({
 					id,
 					title,
@@ -43,10 +44,12 @@ export default function ({ params: { id } }: { params: { id: string } }) {
 					width,
 					original: { url: "", width: 0, height: 0 },
 				})
+
 				setLoading(false)
 				return
 			}
 		}
+		
 		getByID(id).then((gif) => {
 			setGif(gif)
 			setLoading(false)

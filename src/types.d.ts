@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react"
+
 type baseGif = {
 	title: string
 	id: string
@@ -18,7 +20,14 @@ export type bruteGif = baseGif & {
 }
 
 export type gif = baseInfo &
-		baseGif & {
-			srcSet: string
-			original: baseInfo
-		}
+	baseGif & {
+		srcSet: string
+		original: baseInfo
+	}
+
+export type dynamicImport = {
+	default: any
+	prototype: any
+}
+
+export type dynamicImportState = [dynamicImport, Dispatch<SetStateAction<dynamicImport>>]

@@ -1,13 +1,8 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
+import { dynamicImport, dynamicImportState } from "@types"
+import { useEffect, useState } from "react"
 
-type dynamicImport = {
-	default: any
-	prototype: any
-}
-
-export default function awaitMasonry(promise: any): dynamicImport {
-	const [imported, setImported]: [dynamicImport, Dispatch<SetStateAction<dynamicImport>>] =
-		useState({ default: null, prototype: null })
+export default function awaitMasonry(promise: Promise<any>): dynamicImport {
+	const [imported, setImported]: dynamicImportState = useState({ default: null, prototype: null })
 
 	useEffect(() => {
 		let cancelled = false
